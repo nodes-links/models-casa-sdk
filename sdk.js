@@ -78,33 +78,33 @@ exports.apigClientFactory.newClient = function (config) {
         defaultAcceptType: config.defaultAcceptType
     };
     var apiGatewayClient = util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.apiGatewayClientFactory.newClient(simpleHttpClientConfig, sigV4ClientConfig);
-    apigClient.projectRefVersionsVersionRefResultsResultFileGet = function (params, body, additionalParams) {
+    apigClient.versionsVersionRefResultsResultFileGet = function (params, body, additionalParams) {
         if (additionalParams === undefined) {
             additionalParams = {};
         }
-        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, ['projectRef', 'resultFile', 'versionRef'], ['body']);
-        var projectRefVersionsVersionRefResultsResultFileGetRequest = {
+        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, ['resultFile', 'versionRef'], ['body']);
+        var versionsVersionRefResultsResultFileGetRequest = {
             verb: 'get'.toUpperCase(),
-            path: pathComponent + uritemplate.parse('/{projectRef}/versions/{versionRef}/results/{resultFile}').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, ['projectRef', 'resultFile', 'versionRef'])),
+            path: pathComponent + uritemplate.parse('/versions/{versionRef}/results/{resultFile}').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, ['resultFile', 'versionRef'])),
             headers: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             queryParams: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             body: body
         };
-        return apiGatewayClient.makeRequest(projectRefVersionsVersionRefResultsResultFileGetRequest, authType, additionalParams, config.apiKey);
+        return apiGatewayClient.makeRequest(versionsVersionRefResultsResultFileGetRequest, authType, additionalParams, config.apiKey);
     };
-    apigClient.projectRefVersionsVersionRefResultsResultFileOptions = function (params, body, additionalParams) {
+    apigClient.versionsVersionRefResultsResultFileOptions = function (params, body, additionalParams) {
         if (additionalParams === undefined) {
             additionalParams = {};
         }
         util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
-        var projectRefVersionsVersionRefResultsResultFileOptionsRequest = {
+        var versionsVersionRefResultsResultFileOptionsRequest = {
             verb: 'options'.toUpperCase(),
-            path: pathComponent + uritemplate.parse('/{projectRef}/versions/{versionRef}/results/{resultFile}').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, [])),
+            path: pathComponent + uritemplate.parse('/versions/{versionRef}/results/{resultFile}').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, [])),
             headers: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             queryParams: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             body: body
         };
-        return apiGatewayClient.makeRequest(projectRefVersionsVersionRefResultsResultFileOptionsRequest, authType, additionalParams, config.apiKey);
+        return apiGatewayClient.makeRequest(versionsVersionRefResultsResultFileOptionsRequest, authType, additionalParams, config.apiKey);
     };
     return apigClient;
 };
